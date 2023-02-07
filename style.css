@@ -234,3 +234,9 @@ main{
       background-color: var(--secundario);
     }
   }
+
+  .footer{
+    width: 100%;
+    background-color: var(--ice);
+    text-align: center;
+  }
