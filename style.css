@@ -10,6 +10,7 @@
     --normal: #a8a878;
     --fire: #f06330;
     --water: #6890f0;
+    --tarjetas:#7ce249;
     --grass: #78c850;
     --electric: #f8d030;
     --ice: #98d8d8;
@@ -52,11 +53,17 @@ body{
     background-color: var(--gray);
     font-family: var(--principal);
 }
+.img{    
+    margin: auto;
+    margin-top: 1rem;
+}
 .header{
     padding-block: 1rem;
     box-shadow: 0 0 2rem -1rem rgba(0, 0, 0, .5);
 }
 .nav{
+    margin: auto;
+    width: 75%;
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -65,7 +72,11 @@ body{
 }
 .nav-list{
     /* max-width: ; */
+    background-color: var(--black);
+    padding: 1rem;
+    border-radius: 40px;
     display: flex;
+    justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
     gap: 0.5rem;
@@ -77,6 +88,7 @@ body{
     cursor: pointer;
     text-transform: uppercase;
     font-weight: 400;
+
 }
 .btn-header:hover{
     transform: scale(1.1);
@@ -114,6 +126,11 @@ main{
     position: relative;
     cursor: pointer;
 }
+.pokemon:hover{
+    transition:  0.5s;
+    transform: scale(1.04);
+    background-color: var(--tarjetas);
+}
 /* .pokemon-id-back{
     position: absolute;
     top: 50%;
@@ -144,7 +161,15 @@ main{
     align-items: center;
     column-gap: .5rem;
 }
-
+.pokemon-tipos{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.pokemon-tipos p{
+    padding: .5rem;
+    border-radius: 20px;
+}
 .normal{
     background-color: var(--normal);
 }
@@ -199,42 +224,27 @@ main{
 .fairy{
     background-color: var(--fairy);
 }
-#modalContent{
-    width: 40rem;
-    height: 25rem;
-  }
-  
-  #modalText{
-    font-size: 2rem;
-    font-weight: 700;
-    margin-top: 2rem;
-    margin-bottom: 5rem;
-  }
-  
-  #modalbtn{
-    width: 20rem;
-    background-color: var(--secundario);
-  }
-  
-  @media (min-width: 768px) {
-    #modalContent{
-      width: 40rem;
-      height: 25rem;
-    }
 
-    #modalText{
-      font-size: 3rem;
-      font-weight: 700;
-      margin-top: 2rem;
-      margin-bottom: 7rem;
-    }
-    
-    #modalbtn{
-      width: 20rem;
-      background-color: var(--secundario);
-    }
-  }
-
+.modal{
+    visibility: collapse;
+    position: fixed ;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    transition: all .5s;
+    background-color: rgba(0, 0, 0, 0.767); 
+}
+.contenido-modal{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30%;
+    height: 40rem;
+    background-color: var(--white);
+}
   .footer{
     width: 100%;
     background-color: var(--ice);
